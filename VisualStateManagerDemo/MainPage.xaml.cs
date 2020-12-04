@@ -19,5 +19,10 @@ namespace VisualStateManagerDemo
         {
             Navigation.PushAsync(new RegistrationPage());
         }
+
+        void Button_Clicked_1(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new OrientationPage());
+        }
     }
 }

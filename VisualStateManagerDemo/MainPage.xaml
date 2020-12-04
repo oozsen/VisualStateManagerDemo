@@ -7,7 +7,8 @@
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
             <Label Text="Visual State Manager Demo" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
-        <Button Text="Click" Clicked="Button_Clicked" />
+        <Button Text="Registration Page Sample" Clicked="Button_Clicked" />
+        <Button Text="Orientation Page Sample" Clicked="Button_Clicked_1" />
     </StackLayout>
 
 </ContentPage>
