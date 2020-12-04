@@ -60,6 +60,39 @@
             </Setter>
         </Style>
 
+        <Style x:Key="PasswordStrength"
+               BasedOn="{StaticResource ValidationMessage}"
+               TargetType="Label">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="Strength">
+                        <VisualState x:Name="Invalid">
+                            <VisualState.Setters>
+                                <Setter Property="IsVisible" Value="True" />
+                                <Setter Property="TextColor" Value="Red" />
+                                <Setter Property="Text" Value="6 or more characters required" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Weak">
+                            <VisualState.Setters>
+                                <Setter Property="IsVisible" Value="True" />
+                                <Setter Property="TextColor" Value="Blue" />
+                                <Setter Property="Text" Value="That's Ok but bigger is better" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="Strong">
+                            <VisualState.Setters>
+                                <Setter Property="IsVisible" Value="True" />
+                                <Setter Property="TextColor" Value="Green" />
+                                <Setter Property="Text" Value="Well done, that's nice and strong!" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+
+
         <Style x:Key="formLabelTitle" TargetType="Label">
             <Setter Property="TextColor" Value="#333333"/>
             <Setter Property="FontSize" Value="Small"/>
@@ -99,27 +132,32 @@
                 </Grid.RowDefinitions>
 
                 <StackLayout Padding="30,40">
+                    <!-- Header -->
                     <Label FontAttributes="Italic" Text="Welcome"/>
                     <Label FontAttributes="Bold" FontSize="Large"
                            Text="Create your account"/>
                     <BoxView Style="{StaticResource sideBar}" />
 
+                    <!-- Display Name -->
                     <Grid>
                         <Label Style="{StaticResource formLabelTitle}"
                                Text="Display Name" />
                         <Label Style="{StaticResource formHelpText}"
                                Text="All fields are mandatory" />
                     </Grid>
-
                     <Entry x:Name="UserName" />
                     <Label x:Name="UserNameMsg" Style="{StaticResource ValidationMessage}"
                            Text="You have to enter a display name" />
 
+                    <!-- Email -->
                     <Grid>
                         <Label Style="{StaticResource formLabelTitle}" Text="Email"/>
                     </Grid>
                     <Entry x:Name="Email" />
+                    <Label x:Name="EmailMsg" Style="{StaticResource ValidationMessage}"
+                           Text="Valid Email address required" />
 
+                    <!-- Password -->
                     <Grid>
                         <Label Style="{StaticResource formLabelTitle}"
                                Text="Password" />
@@ -127,13 +165,15 @@
                                Text="six or mode characters" />
                     </Grid>
                     <Entry x:Name="Password" IsPassword="True" />
+                    <Label x:Name="PasswordMsg" Style="{StaticResource PasswordStrength}"
+                           Text="Password must be 6 characters or more" />
                 </StackLayout>
 
                 <Button x:Name="SubmitButton" Grid.Row="1"
                         Style="{StaticResource submitButton}"
                         Text="Create Yout Account" />
 
-                </Grid>
-            </ScrollView>
+            </Grid>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
