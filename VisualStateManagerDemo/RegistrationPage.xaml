@@ -11,7 +11,8 @@
                         <VisualState x:Name="Normal"/>
                         <VisualState x:Name="Focused">
                             <VisualState.Setters>
-                                <Setter Property="BackgroundColor" Value="LightYellow" />
+                                <Setter Property="BackgroundColor"
+                                        Value="LightYellow" />
                             </VisualState.Setters>
                         </VisualState>
                     </VisualStateGroup>
