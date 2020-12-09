@@ -41,7 +41,7 @@
                     <VisualStateGroup x:Name="ValidationStates">
                         <VisualState Name="Normal">
                             <VisualState.Setters>
-                                <Setter Property="IsVisible" Value="False"/>
+                                <Setter Property="IsVisible" Value="True"/>
                             </VisualState.Setters>
                         </VisualState>
                         <VisualState Name="Valid">
